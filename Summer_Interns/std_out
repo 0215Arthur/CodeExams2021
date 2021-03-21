@@ -1,3 +1,51 @@
-please input ...
-3
+00
+21
+ ---
+ cur: 2
+ state: 01
+21
+ ---
+ cur: 20
+ state:  state: true
+02
+21
+ ---
+ cur: 200
+ state:  state: true
+02
+22
+ ---
+ cur: 2002
+ state:  state: true
+01
+22
+ ---
+ cur: 202
+ state:  state: true
+02
+22
+ ---
+ cur: 2020
+ state:  state: true
+00
+22
+ ---
+ cur: 22
+ state: 01
+22
+ ---
+ cur: 220
+ state:  state: true
+02
+22
+ ---
+ cur: 2200
+ state:  state: true
 7
+20
+200
+202
+220
+2002
+2020
+2200
