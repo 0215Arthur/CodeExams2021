@@ -12,7 +12,6 @@ using namespace std;
 空间复杂度：  O(LogN) 主要是栈的深度
 
 */
-
 int Parition( vector<int>& arr, int left, int right) {
     int pivot = arr[left];
     int start = left;
@@ -39,18 +38,4 @@ void quickSort(vector<int>& arr, int left, int right) {
     cout << p  << endl;
     quickSort(arr,left,p-1);
     quickSort(arr,p+1, right);
-}
-
-int main() {
-    int a;
-    vector<int > arr;
-    while(cin >> a) {
-        arr.push_back(a);
-    }
-    quickSort(arr, 0 , arr.size()-1);
-    for (int i = 0; i<arr.size(); i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-    return 0;
 }
