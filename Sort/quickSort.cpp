@@ -39,3 +39,24 @@ void quickSort(vector<int>& arr, int left, int right) {
     quickSort(arr,left,p-1);
     quickSort(arr,p+1, right);
 }
+
+int randomized_partition(vector<int>& nums, int left, int right) {
+    int i = rand() % (right - left + 1) + left; // 随机选一个作为我们的主元
+    swap(nums[left], nums[i]); // 交换随机元
+    return partition(nums, left, right);
+}
+
+void quick_sort(vector<int>& arr, int left, int right) {
+    if (left < right) {
+        int start = left;
+        int pivot = arr[start];
+        while(left < right) {
+            while (left < right && arr[right] >= pivot) right--;
+            while (left < right && arr[left] <= pivot) left++;
+            swap(arr[left],arr[right]);
+        }
+
+        quick_sort(arr, start, left - 1);
+        quick_sort(arr, left + 1, right);
+    }
+}
