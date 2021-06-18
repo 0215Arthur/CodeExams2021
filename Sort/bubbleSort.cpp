@@ -23,14 +23,31 @@ void bubbleSort(vector<int>& arr) {
             break; 
     }
 }
+void quick_sort(vector<int>& arr, int left, int right) {
+    cout << left << right << endl;
+    if (left < right) {
+        int start = left;
+        int pivot = arr[start];
+        while(left < right) {
+            while (left < right && arr[right] >= pivot) right--;
+            while (left < right && arr[left] <= pivot) left++;
+            swap(arr[left],arr[right]);
+        }
+        swap(arr[start], arr[left]);
+        quick_sort(arr, start, left - 1);
+        quick_sort(arr, left + 1, right);
+    }
+}
 
 int main() {
-        int a;
+    int a;
     vector<int > arr;
     while(cin >> a) {
         arr.push_back(a);
     }
-    bubbleSort(arr);
+    //bubbleSort(arr);
+    quick_sort(arr, 0 , arr.size() - 1);
+
     for (int i = 0; i<arr.size(); i++) {
         cout << arr[i] << " ";
     }

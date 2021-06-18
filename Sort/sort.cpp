@@ -92,10 +92,14 @@ int Partition(vector<int>& arr, int left, int right) {
         }
     }
     swap(arr[start], arr[left]);
+    for (int i = 0;i < arr.size(); i++)
+        cout << arr[i] << " ";
+    cout << endl;
     return left;
 }
 
 void quickSort(vector<int>& arr, int left, int right) {
+    cout << "quicksort" << endl;
     if (left >= right)
         return;
     int p = Partition(arr, left, right);
@@ -174,4 +178,21 @@ void heapSort(vector<int>& arr) {
         adjustHeap(arr, i, 0);
     }
     return;
+}
+
+int main() {
+    int a;
+    vector<int > arr;
+    while(cin >> a) {
+        arr.push_back(a);
+    }
+    
+    for (int i = 0; i<arr.size(); i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    quickSort(arr, 0, arr.size() - 1);
+
+    return 0;
 }
